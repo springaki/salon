@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Checkin at:
+  = @journal.checkin_at
+%p
+  %b Karte no:
+  = @journal.karte_no
+%p
+  %b Quantity:
+  = @journal.quantity
+%p
+  %b Item:
+  = @journal.item
+
+= link_to 'Edit', edit_journal_path(@journal)
+\|
+= link_to 'Back', journals_path
