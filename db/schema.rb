@@ -29,11 +29,12 @@ ActiveRecord::Schema.define(version: 20160927090946) do
     t.index ["item_id"], name: "index_journals_on_item_id"
   end
 
-  create_table "people", force: :cascade do |t|
-    t.integer  "karte_no"
+  create_table "people", id: false, force: :cascade do |t|
+    t.integer  "karte_no",   null: false
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["karte_no"], name: "index_people_on_karte_no", unique: true
   end
 
 end
