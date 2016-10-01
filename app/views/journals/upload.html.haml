@@ -1,0 +1,8 @@
+%h1 Upload journal
+
+= form_for @journal, url: { action: 'bulk_create' } do |f|
+  .field
+    = f.file_field :upload_file
+  .actions
+    = f.submit "Upload"
+

@@ -61,6 +61,24 @@ class JournalsController < ApplicationController
     end
   end
 
+  def upload
+    @journal = Journal.new
+  end
+
+  def bulk_create
+    file = journal_file_params[:upload_file]
+    name = file.original_filename
+    salt = SecureRandom.hex(8)
+    md5 = Digest::MD5.hexdigest(salt + name)
+
+    File.open("public/upload_files/#{md5}", 'wb') { |f|
+      f.write(file.read)
+   }
+
+    @journal = Journal.new
+    render :upload
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_journal
@@ -70,5 +88,9 @@ class JournalsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def journal_params
       params.require(:journal).permit(:checkin_at, :karte_no, :quantity, :item_id)
+    end
+
+    def journal_file_params
+      params.require(:journal).permit(:upload_file)
     end
 end
