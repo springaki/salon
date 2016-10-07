@@ -1,6 +1,7 @@
 class Person < ApplicationRecord
   has_many :journals, primary_key: :karte_no, foreign_key: :karte_no
 
+  self.primary_key = "karte_no"
   validates :karte_no, uniqueness: true
 
   class << self

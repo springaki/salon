@@ -71,9 +71,10 @@ class JournalsController < ApplicationController
     salt = SecureRandom.hex(8)
     md5 = Digest::MD5.hexdigest(salt + name)
 
-    File.open("public/upload_files/#{md5}", 'wb') { |f|
+    filename = "public/upload_files/#{md5}"
+    File.open(filename, 'wb') { |f|
       f.write(file.read)
-   }
+    }
 
     @journal = Journal.new
     render :upload
