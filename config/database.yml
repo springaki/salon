@@ -23,3 +23,26 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+
+
+# default: &default
+#   adapter:  postgresql
+#   host:     192.168.99.100
+#   encoding: unicode
+#   pool:     5
+#
+# development:
+#   <<: *default
+#   database: development
+#
+# test:
+#   <<: *default
+#   database: test
+#
+# production:
+#   <<: *default
+#   host:     localhost
+#   database: <%= ENV['DATABASE_NAME'] %>
+#   username: <%= ENV['DATABASE_USER'] %>
+#   password: <%= ENV['DATABASE_PASSWORD'] %>

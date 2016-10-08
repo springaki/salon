@@ -76,6 +76,7 @@ class JournalsController < ApplicationController
       f.write(file.read)
     }
 
+    Journal.csv_import(filename)
     @journal = Journal.new
     render :upload
   end

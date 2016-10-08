@@ -16,8 +16,10 @@
       %tr
         %td= journal.checkin_at
         %td= journal.karte_no
+        %td= journal.item.name
+        %td= journal.item.price
         %td= journal.quantity
-        %td= journal.item
+        %td= journal.item.price * journal.quantity
         %td= link_to 'Show', journal
         %td= link_to 'Edit', edit_journal_path(journal)
         %td= link_to 'Destroy', journal, :method => :delete, :data => { :confirm => 'Are you sure?' }
