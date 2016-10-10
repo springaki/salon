@@ -2,6 +2,11 @@ require 'rails_helper'
 
 describe ItemsController do
 
+  let(:login_user) { create(:user) }
+  before :each do
+    sign_in login_user
+  end
+
   describe "GET index" do
     example "全ての連絡先が表示すること" do
       item1 = create(:item)
