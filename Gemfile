@@ -52,14 +52,15 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem "rspec-rails", "~> 3.1.0"
+  gem "rspec-rails", "~> 3.5.2"
   gem "factory_girl_rails", "~> 4.4.1"
 end
 
 group :test do
-  # gem "faker", "~> 1.4.3"
+  gem "faker", "~> 1.4.3"
   gem "capybara", "~> 2.4.3"
   gem 'database_rewinder'
   # gem "launchy", "~> 2.4.2"
   # gem "selenium-webdriver", "~> 2.43.0"
+  gem 'rails-controller-testing', require: false
 end

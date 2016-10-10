@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :person do
-    karte_no 1
-    name "MyString"
+    sequence(:karte_no) { |n| n }
+    name { "%s %s" % [Faker::Name.first_name, Faker::Name.last_name] }
   end
 end
