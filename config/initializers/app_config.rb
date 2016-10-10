@@ -1,5 +1,5 @@
 Rails.application.config.time_zone = 'Asia/Tokyo'
-Rails.application.config.i18n.default_locale = :ja
+# Rails.application.config.i18n.default_locale = :ja
 
 Rails.application.config.generators do |g|
   g.test_framework :rspec,
@@ -15,4 +15,4 @@ Rails.application.config.generators do |g|
   g.stylesheets false
   g.fixture_replacement :factory_girl, dir: 'spec/factories'
 end
-Rails.application.config.action_mailer.default_url_options = { host: Settings.host_name }
+Rails.application.config.action_mailer.default_url_options = { host: 'localhost:3000' }

@@ -8,7 +8,7 @@ describe Journal do
       [Journal.count, Item.count, Person.count] }.from(
       [0, 0, 0]).to(
       [47, 28, 25])
-    pp Item.all
+    # pp Item.all
   end
 
 
