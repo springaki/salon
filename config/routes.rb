@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  root to: "journals#index"
+
   get 'journals/upload', to: 'journals#upload'
   post 'journals/bulk_create', to: 'journals#bulk_create'
   resources :journals
