@@ -27,15 +27,15 @@ feature 'Item management' do
     user = create(:user)
 
     visit root_path
-    page.save_screenshot
     expect(page).to have_content 'You need to sign in or sign up before continuing'
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
+    save_screenshot "tmp/capybara/screenshot-#{DateTime.now}.png"
     click_on 'Log in'
+    save_screenshot "tmp/capybara/screenshot-#{DateTime.now}.png"
 
     visit root_path
-    save_and_open_page
     expect(page).to have_content 'Listing journals'
   end
 end
